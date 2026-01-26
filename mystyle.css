@@ -1,0 +1,5 @@
+ #board { display: grid; grid-template-columns: repeat(8, 50px); grid-template-rows: repeat(8, 50px); background: green; width: 400px; height: 400px; border: 2px solid #333; }
+        .cell { border: 1px solid #000; display: flex; justify-content: center; align-items: center; cursor: pointer; }
+        .disc { width: 40px; height: 40px; border-radius: 50%; display: none; }
+        .black { background: black; display: block; }
+        .white { background: white; display: block; }
