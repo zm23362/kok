@@ -1,1 +1,36 @@
+ const boardElem = document.getElementById('board');
+        let turn = 'black';
+        let board = Array(8).fill().map(() => Array(8).fill(null));
 
+        function init() {
+            for (let r = 0; r < 8; r++) {
+                for (let c = 0; c < 8; c++) {
+                    const cell = document.createElement('div');
+                    cell.className = 'cell';
+                    cell.onclick = () => move(r, c);
+                    const disc = document.createElement('div');
+                    disc.id = `d-${r}-${c}`;
+                    disc.className = 'disc';
+                    cell.appendChild(disc);
+                    boardElem.appendChild(cell);
+                }
+            }
+            // 初期配置
+            updateCell(3, 3, 'white'); updateCell(3, 4, 'black');
+            updateCell(4, 3, 'black'); updateCell(4, 4, 'white');
+        }
+
+        function updateCell(r, c, color) {
+            board[r][c] = color;
+            document.getElementById(`d-${r}-${c}`).className = `disc ${color}`;
+        }
+
+        function move(r, c) {
+            if (board[r][c]) return; // 既に石がある
+            updateCell(r, c, turn);
+            turn = turn === 'black' ? 'white' : 'black';
+            document.getElementById('turn').innerText = turn === 'black' ? '黒' : '白';
+        }
+
+        init();
+    
