@@ -1,8 +1,5 @@
-body {
-            /* 画像のパスを指定 */
-            background-image: url('zz.jpg'); 
-            
-            /* 画像を画面いっぱいに広げる */
+body {/* 画像のパスを指定 */ background-image: url('zz.jpg'); 
+      /* 画像を画面いっぱいに広げる */
             background-size: cover;
             
             /* 画像を中央に配置 */
