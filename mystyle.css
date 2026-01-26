@@ -1,3 +1,6 @@
+h1 { color: red; }
+th,td { border: ridge thick black; }
+
 body {/* 画像の指定 */background-image: url('image/zz.jpg');
 /* 画面全体を覆うようにサイズを調整 */background-size: cover;
 /* 画像を中央に配置 */background-position: center;
