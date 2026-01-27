@@ -6,3 +6,9 @@ body {/* 画像の指定 */background-image: url('image/zz.jpg');
 /* 画像を中央に配置 */background-position: center;
 /* 画像を繰り返さない */background-repeat: no-repeat;
 /* スクロールしても背景を固定 */background-attachment: fixed;}
+
+
+.container { text-align: center; margin-top: 50px; }
+#image-display { width: 400px; height: 300px; object-fit: cover; border: 5px solid #333; border-radius: 10px; }
+.controls { margin-top: 20px; }
+button { padding: 10px 20px; font-size: 16px; cursor: pointer; margin: 0 10px; }
