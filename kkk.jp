@@ -1,0 +1,46 @@
+ // 画像リスト（用意した画像に合わせて変更してください）
+    const images = [
+        'image1.jpg',
+        'image2.jpg',
+        'image3.jpg',
+        'image4.jpg'
+    ];
+
+    let currentIndex = 0;
+    let timerId = null;
+    let isRunning = true;
+    const imgElement = document.getElementById('image-display');
+    const btnElement = document.getElementById('startStopBtn');
+
+    // 画像をランダムに変更する関数
+    function changeImage() {
+        // 現在と違う画像が選ばれるまでループ
+        let nextIndex;
+        do {
+            nextIndex = Math.floor(Math.random() * images.length);
+        } while (nextIndex === currentIndex && images.length > 1);
+        
+        currentIndex = nextIndex;
+        imgElement.src = images[currentIndex];
+    }
+
+    // 1秒ごとに画像を切り替え
+    function startSlideshow() {
+        timerId = setInterval(changeImage, 1000); // 1000ms = 1秒
+        isRunning = true;
+        btnElement.innerText = 'ストップ';
+    }
+
+    // ストップ/スタートの切り替え
+    function toggleSlideshow() {
+        if (isRunning) {
+            clearInterval(timerId); // タイマーを停止
+            btnElement.innerText = 'スタート';
+            isRunning = false;
+        } else {
+            startSlideshow(); // 再開
+        }
+    }
+
+    // 初回開始
+    startSlideshow();
