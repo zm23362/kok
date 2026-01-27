@@ -1,1 +1,3 @@
-
+const image = document.querySelectorAll('#slideshow img'); let currentIndex = 0;
+function showNextImage() { image[currentIndex].classList.remove('active'); currentIndex = (currentIndex + 1) % image.length; image[currentIndex].classList.add('active');}
+setInterval(showNextImage, 3000);
